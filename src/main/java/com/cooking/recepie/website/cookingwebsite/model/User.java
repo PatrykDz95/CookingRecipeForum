@@ -6,6 +6,9 @@ import java.util.Set;
 @Entity
 @Table(name = "users")
 public class User {
+
+    private RecipePost recipeposts;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,6 +29,17 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", nullable = false)
+    public RecipePost getAllUserRecipes() {
+        return recipeposts;
+
+    }
+
+    public void setRecipeposts(RecipePost recipeposts) {
+        this.recipeposts = recipeposts;
     }
 
     public String getUsername() {
