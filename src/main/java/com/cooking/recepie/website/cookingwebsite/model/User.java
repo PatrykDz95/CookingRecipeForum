@@ -1,13 +1,13 @@
 package com.cooking.recepie.website.cookingwebsite.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
 public class User {
-
-    private RecipePost recipeposts;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,10 @@ public class User {
     @ManyToMany
     private Set<Role> roles;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private RecipePost recipeposts;
+
+
     public Long getId() {
         return id;
     }
@@ -31,11 +35,8 @@ public class User {
         this.id = id;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", nullable = false)
-    public RecipePost getAllUserRecipes() {
+    public RecipePost getRecipeposts() {
         return recipeposts;
-
     }
 
     public void setRecipeposts(RecipePost recipeposts) {
@@ -72,5 +73,17 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", passwordConfirm='" + passwordConfirm + '\'' +
+                ", roles=" + roles +
+                ", recipeposts=" + recipeposts +
+                '}';
     }
 }
