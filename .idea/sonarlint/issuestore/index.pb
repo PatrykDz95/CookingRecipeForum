@@ -68,3 +68,9 @@ Osrc/main/java/com/cooking/recepie/website/cookingwebsite/WebSecurityConfig.java
 Ysrc/main/java/com/cooking/recepie/website/cookingwebsite/controller/RecipeController.java,8\3\8336d20e48ac5ff629ec8b8a203083d411eda6eb
 ~
 Nsrc/main/java/com/cooking/recepie/website/cookingwebsite/model/RecipePost.java,4\3\437394d503b8b9daa85513ce49e30f3fd91fb308
+I
+src/main/webapp/posts.jsp,b\9\b925937968c4da7f8e4bf6debd5cc9ac5f161431
+‰
+Ysrc/main/java/com/cooking/recepie/website/cookingwebsite/repository/RecipeRepository.java,8\1\81906cd9351e6a23b955f421c053d41aa3f7b004
+ƒ
+Ssrc/main/java/com/cooking/recepie/website/cookingwebsite/service/RecipeService.java,2\a\2a74944c0068fc554620bea2060f3040377081c6

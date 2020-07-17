@@ -75,14 +75,4 @@ public class RecipePost {
         this.users = users;
     }
 
-    @Override
-    public String toString() {
-        return "RecipePost{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", shortDescription='" + shortDescription + '\'' +
-                ", description='" + description + '\'' +
-                ", users=" + users +
-                '}';
-    }
 }

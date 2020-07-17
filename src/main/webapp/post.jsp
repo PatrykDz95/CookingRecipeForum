@@ -29,7 +29,7 @@
                 <th>User</th>
             </tr>
 
-            <c:forEach var="posts" items="${allRecipes}">
+            <c:forEach var="posts" items="${recipeByUser}">
 
                 <tr>
                     <td> ${posts.title}

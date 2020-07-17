@@ -1,6 +1,7 @@
 package com.cooking.recepie.website.cookingwebsite.service;
 
 import com.cooking.recepie.website.cookingwebsite.model.RecipePost;
+import com.cooking.recepie.website.cookingwebsite.model.User;
 import com.cooking.recepie.website.cookingwebsite.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,4 +18,7 @@ public class RecipeService {
         return recipeRepository.findAll();
     }
 
+    public List<RecipePost> findByUser(User user) {
+        return recipeRepository.findByusersId(user.getId());
+    }
 }
