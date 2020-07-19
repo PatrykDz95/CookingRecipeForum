@@ -1,10 +1,14 @@
 package com.cooking.recepie.website.cookingwebsite.model;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "posts")
+@Cacheable
+@org.hibernate.annotations.Cache(usage=CacheConcurrencyStrategy.READ_ONLY)
 public class RecipePost {
 
     @Id
