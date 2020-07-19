@@ -18,6 +18,8 @@
 
         <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
         <a href="${pageContext.request.contextPath}/recipes/posts">Show all posts!</a>
+        <p>
+        <a href="${pageContext.request.contextPath}/recipes/post/${pageContext.request.userPrincipal.name}">Show your posts!</a>
     </c:if>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
