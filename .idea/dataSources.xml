@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@localhost" uuid="8ee19c7f-9fa7-498a-babd-64f81f88afc7">
+    <data-source source="LOCAL" name="postgres@localhost1" uuid="aeda7511-8976-4c52-a1ce-9600c9d903ee">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/CookingDB</jdbc-url>
     </data-source>
   </component>
 </project>
