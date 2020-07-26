@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="resources/css/materialize.min.css"  media="screen,projection"/>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="resources/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet"/>
@@ -36,7 +44,6 @@
 
         function setConnected(connected) {
             $("#connect").prop("disabled", connected);
-            $("#connectSockJS").prop("disabled", connected);
             $("#disconnect").prop("disabled", !connected);
             if (connected) {
                 $("#responses").show();
@@ -78,21 +85,6 @@
             stompClient.activate();
         }
 
-        function connectSockJs() {
-            stompClient = new window.StompJs.Client({
-                webSocketFactory: function () {
-                    return new window.SockJS("http://localhost:8080/sockjs");
-                }
-            });
-            stompClient.onConnect = function (frame) {
-                frameHandler(frame)
-            };
-            stompClient.onWebsocketClose = function () {
-                onSocketClose();
-            };
-
-            stompClient.activate();
-        }
 
         function disconnect() {
             if (stompClient !== null) {
@@ -128,9 +120,6 @@
             $("#connect").click(function () {
                 connect();
             });
-            $("#connectSockJS").click(function () {
-                connectSockJs();
-            });
             $("#disconnect").click(function () {
                 disconnect();
             });
@@ -153,8 +142,7 @@
             <form class="form-inline">
                 <div class="form-group">
                     <label for="connect">WebSocket connection:</label>
-                    <button class="btn btn-default" id="connect" type="submit">Connect</button>
-                    <button class="btn btn-default" id="connectSockJS" type="submit">ConnectSockJS</button>
+                    <a class="btn-floating pulse" id="connect" type="submit">Connect</a>
                 </div>
             </form>
         </div>

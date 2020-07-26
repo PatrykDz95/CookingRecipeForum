@@ -17,7 +17,11 @@ public class MessageController {
     @MessageMapping("/send")
     @SendTo("/topic/messages")
     public Message send(Message message) {
-        LOGGER.info(String.format("Received message [%s] on `/app/chat` message mapping!", message.toString()));
+
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info(String.format("Received message [%s] on `/app/chat` message mapping!", message.toString()));
+        }
+
         LocalDateTime timestamp = LocalDateTime.now();
         return new Message(message.getFrom(), message.getMessage(), timestamp);
     }
