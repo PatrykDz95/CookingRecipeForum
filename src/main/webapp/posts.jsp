@@ -41,12 +41,12 @@
 <%--            </c:forEach>--%>
         <c:forEach var="posts" items="${allRecipes}">
         <div class="row">
-            <div class="col s12 m6 l4">
+            <div class="col s4 m6 l3">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                         <span class="card-title">${posts.title}</span>
                         <p style="font-size: 70%">${posts.users.username}</p>
-                        <p>${posts.description}</p>
+                        <p>${posts.shortDescription}</p>
                     </div>
                     <div class="card-action">
                     </div>
